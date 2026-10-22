@@ -1,4 +1,4 @@
-package com.example.semester_project
+package com.example.tutormatch_ai
 
 import io.flutter.embedding.android.FlutterActivity
 

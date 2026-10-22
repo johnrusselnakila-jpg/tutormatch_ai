@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:semester_project/app.dart';
+import 'package:tutormatch_ai/app.dart';
 
 void main() {
   testWidgets('TutorMatch A.I. app builds and shows the app title',
