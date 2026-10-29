@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutormatch_ai/screens/home_screen.dart';
 import 'package:tutormatch_ai/screens/login_screen.dart';
+import 'package:tutormatch_ai/screens/report_form_screen.dart';
 
 class TutorMatchApp extends StatelessWidget {
   const TutorMatchApp({super.key});
@@ -92,6 +93,8 @@ class TutorMatchApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
+        '/report': (context) => const ReportFormScreen(),
+
         '/login': (context) => const LoginScreen(),
       },
     );

@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 
 class AppTextField extends StatefulWidget {
   final String label;
+
   final String? hintText;
   final bool obscureText;
   final TextEditingController controller;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final ValueChanged<String>? onFieldSubmitted;
+  final int? maxLines;
+  final int? maxLength;
+  final bool? enabled;
 
   const AppTextField({
     super.key,
@@ -19,6 +23,9 @@ class AppTextField extends StatefulWidget {
     this.validator,
     this.keyboardType,
     this.onFieldSubmitted,
+    this.maxLines,
+    this.maxLength,
+    this.enabled,
   });
 
   @override
@@ -42,12 +49,17 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
+    // Obscured fields cannot be multiline per Flutter's assertion
+    final effectiveMaxLines = widget.obscureText ? 1 : widget.maxLines;
     return TextFormField(
       controller: widget.controller,
       obscureText: widget.obscureText ? _obscureText : false,
       keyboardType: widget.keyboardType,
       validator: widget.validator,
       onFieldSubmitted: widget.onFieldSubmitted,
+      maxLines: effectiveMaxLines,
+      maxLength: widget.maxLength,
+      enabled: widget.enabled,
       decoration: _buildDecoration(context),
     );
   }

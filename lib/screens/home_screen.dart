@@ -94,6 +94,15 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 32),
+                // Report an Issue
+                AppButton(
+                  label: 'Report an Issue',
+                  isSecondary: true,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/report');
+                  },
+                ),
+                const SizedBox(height: 12),
                 // Primary filled button
                 AppButton(
                   label: 'Log In',
